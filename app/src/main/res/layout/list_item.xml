@@ -8,13 +8,13 @@
     android:paddingLeft="16dp">
 
     <TextView
-        android:id="@+id/miwok_tv"
+        android:id="@+id/miwok_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="lutti" />
 
     <TextView
-        android:id="@+id/english_tv"
+        android:id="@+id/default_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="one" />
