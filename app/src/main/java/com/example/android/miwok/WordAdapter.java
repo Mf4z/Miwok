@@ -3,6 +3,7 @@ package com.example.android.miwok;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,8 +15,14 @@ import java.util.List;
 
 public class WordAdapter extends ArrayAdapter<Word> {
 
-    public WordAdapter(@NonNull Context context, @NonNull List<Word> objects) {
+    //Resource ID for background color
+    private int mColorResourceId;
+
+
+    public WordAdapter(@NonNull Context context, @NonNull List<Word> objects,int colorResourceId) {
         super(context, 0, objects);
+
+        mColorResourceId = colorResourceId;
     }
 
 
@@ -66,6 +73,16 @@ public class WordAdapter extends ArrayAdapter<Word> {
         else{//Set visibility to gone to show no space of image
             imageView.setVisibility(View.GONE);
         }
+
+
+        // Set the theme color for the list item
+        View textContainer = listItemView.findViewById(R.id.text_container);
+        // Find the color that the resource ID maps to
+        int color = ContextCompat.getColor(getContext(), mColorResourceId);
+        //Set the background color of the text_container
+        textContainer.setBackgroundColor(color);
+
+
         //Returns the whole list item layout (Containing two text views)
         return listItemView;
     }
