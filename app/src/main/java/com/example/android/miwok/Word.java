@@ -8,6 +8,12 @@ public class Word {
     /** Miwok translation for the word */
     private String mMiwokTranslation;
 
+    //Member variable for Word  Image
+    private int mImageResourceId = NO_IMAGE_PROVIDED;
+
+    //Constant variable that keeps shows Image is not se
+    private static final int NO_IMAGE_PROVIDED = -1;
+
     /**
      * Create a new Word object.
      *
@@ -18,6 +24,12 @@ public class Word {
     public Word(String defaultTranslation, String miwokTranslation) {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
+    }
+
+    public Word(String mDefaultTranslation, String mMiwokTranslation, int mImageResourceId) {
+        this.mDefaultTranslation = mDefaultTranslation;
+        this.mMiwokTranslation = mMiwokTranslation;
+        this.mImageResourceId = mImageResourceId;
     }
 
     /**
@@ -32,5 +44,14 @@ public class Word {
      */
     public String getMiwokTranslation() {
         return mMiwokTranslation;
+    }
+
+    public int getmImageResourceId() {
+        return mImageResourceId;
+    }
+
+    //Method to check if the class variable has an image resource passed to it
+    public boolean hasImage() {
+        return mImageResourceId != NO_IMAGE_PROVIDED;
     }
 }

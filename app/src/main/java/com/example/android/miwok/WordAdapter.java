@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -54,6 +55,17 @@ public class WordAdapter extends ArrayAdapter<Word> {
         // set this text on the miwokWord TextView
         miwokWord.setText(currentWord.getMiwokTranslation());
 
+        //FInd ImageView in the list_item.xml with the ID image
+        ImageView imageView = (ImageView) listItemView.findViewById(R.id.image);
+
+        //Checks if Image view has an resource id passed to it
+        if(currentWord.hasImage()) {
+            imageView.setImageResource(currentWord.getmImageResourceId());
+            imageView.setVisibility(View.VISIBLE); //Set image visible incase in was intially not visible when recyling
+        }
+        else{//Set visibility to gone to show no space of image
+            imageView.setVisibility(View.GONE);
+        }
         //Returns the whole list item layout (Containing two text views)
         return listItemView;
     }
