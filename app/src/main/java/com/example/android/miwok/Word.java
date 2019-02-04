@@ -11,6 +11,9 @@ public class Word {
     //Member variable for Word  Image
     private int mImageResourceId = NO_IMAGE_PROVIDED;
 
+    //Member variable for Word  sound
+    private int mAudioResourceId;
+
     //Constant variable that keeps shows Image is not se
     private static final int NO_IMAGE_PROVIDED = -1;
 
@@ -26,10 +29,17 @@ public class Word {
         mMiwokTranslation = miwokTranslation;
     }
 
-    public Word(String mDefaultTranslation, String mMiwokTranslation, int mImageResourceId) {
+    public Word(String mDefaultTranslation, String mMiwokTranslation, int mAudioResourceId) {
+        this.mDefaultTranslation = mDefaultTranslation;
+        this.mMiwokTranslation = mMiwokTranslation;
+        this.mAudioResourceId = mAudioResourceId;
+    }
+
+    public Word(String mDefaultTranslation, String mMiwokTranslation, int mImageResourceId, int mAudioResourceId) {
         this.mDefaultTranslation = mDefaultTranslation;
         this.mMiwokTranslation = mMiwokTranslation;
         this.mImageResourceId = mImageResourceId;
+        this.mAudioResourceId = mAudioResourceId;
     }
 
     /**
@@ -48,6 +58,10 @@ public class Word {
 
     public int getmImageResourceId() {
         return mImageResourceId;
+    }
+
+    public int getmAudioResourceId() {
+        return mAudioResourceId;
     }
 
     //Method to check if the class variable has an image resource passed to it
