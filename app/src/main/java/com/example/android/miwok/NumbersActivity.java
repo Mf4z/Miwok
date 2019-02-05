@@ -83,6 +83,11 @@ public class NumbersActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+        releaseMediaPlayer();
+    }
 
     /**
      * Clean up the media player by releasing its resources.
