@@ -64,6 +64,16 @@ public class Word {
         return mAudioResourceId;
     }
 
+    @Override
+    public String toString() {
+        return "Word{" +
+                "mDefaultTranslation='" + mDefaultTranslation + '\'' +
+                ", mMiwokTranslation='" + mMiwokTranslation + '\'' +
+                ", mImageResourceId=" + mImageResourceId +
+                ", mAudioResourceId=" + mAudioResourceId +
+                '}';
+    }
+
     //Method to check if the class variable has an image resource passed to it
     public boolean hasImage() {
         return mImageResourceId != NO_IMAGE_PROVIDED;
